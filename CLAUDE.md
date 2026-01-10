@@ -2,7 +2,7 @@
 
 **Project**: Risk-inspired strategic board game deployed on SRT-HQ Kubernetes platform
 **Status**: Production deployed at `https://worldwar.lab.hq.solidrust.net`
-**Last Updated**: 2025-11-09
+**Last Updated**: January 3, 2026
 **Shaun's Golden Rule**: **No workarounds, no temporary fixes, no disabled functionality. Full solutions only.**
 
 ---
@@ -17,37 +17,18 @@
 1. Read "Project Overview" below
 2. Check REPO-STRUCTURE.md for game architecture
 3. Reference deployment patterns as needed
-4. Use ChromaDB for platform integration questions
+4. Check srt-hq-k8s CLAUDE.md for platform integration questions
 
 ---
 
-## 📚 PLATFORM INTEGRATION (ChromaDB Knowledge Base)
+## 📚 PLATFORM INTEGRATION
 
-**When working in this submodule**, you cannot access the parent srt-hq-k8s repository files. Use ChromaDB to query platform capabilities and integration patterns.
+**Related Repositories**:
+- **srt-hq-k8s**: `/Users/shaun/repos/srt-hq-k8s/` - Kubernetes platform (12 nodes)
 
-**Collection**: `srt-hq-k8s-platform-guide` (27 docs, updated 2025-11-09)
-
-**Why This Matters for World War Game**:
-The game is deployed on the SRT-HQ Kubernetes platform and needs to understand:
-- Platform ingress and SSL certificate automation
-- Storage options for save game data (if needed in future)
-- Monitoring and observability integration
-- Platform deployment conventions
-
-**Query When You Need**:
-- Platform architecture and three-tier taxonomy
-- Ingress and SSL certificate patterns
-- Storage classes for persistent data
-- Monitoring and logging integration
-- Platform service discovery
-
-**Example Queries**:
-```
-"What is the srt-hq-k8s platform architecture?"
-"How does ingress and SSL work on the platform?"
-"What storage classes are available for game saves?"
-"How do I integrate with platform monitoring?"
-```
+**Platform Features Used**:
+- **Ingress**: nginx-ingress with TLS (cert-manager DNS-01)
+- **Replicas**: 2 pods with anti-affinity for HA
 
 **When NOT to Query**:
 - ❌ React/Vite development (use package.json scripts)
@@ -81,8 +62,8 @@ The game is deployed on the SRT-HQ Kubernetes platform and needs to understand:
 
 **Repository**:
 - GitHub: `git@github.com:SolidRusT/srt-world-war-game.git`
-- Submodule: `/mnt/c/Users/shaun/repos/srt-hq-k8s/manifests/apps/world-war-game/`
-- Standalone: `/mnt/c/Users/shaun/repos/srt-world-war-game/`
+- Submodule: `/Users/shaun/repos/srt-hq-k8s/manifests/apps/world-war-game/`
+- Standalone: `/Users/shaun/repos/srt-world-war-game/`
 
 **Deployment**:
 - Dev: `npm run dev` → `http://localhost:5173` (Vite dev server)
@@ -423,7 +404,7 @@ You're doing well if:
 ✅ You understand this is a React + Vite SPA
 ✅ You know dev server is `npm run dev` (port 5173)
 ✅ You know production is static files served by nginx
-✅ You reference ChromaDB for platform integration questions
+✅ You check srt-hq-k8s CLAUDE.md for platform integration questions
 ✅ You provide complete solutions (never workarounds)
 ✅ You use PowerShell scripts for deployment
 ✅ You validate changes work end-to-end
@@ -445,7 +426,7 @@ You're doing well if:
 
 ---
 
-**Last Updated**: 2025-11-09
+**Last Updated**: January 3, 2026
 **Status**: Production Ready
 **Platform**: SRT-HQ Kubernetes
 **Access**: https://worldwar.lab.hq.solidrust.net
