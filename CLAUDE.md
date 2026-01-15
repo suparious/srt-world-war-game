@@ -426,6 +426,22 @@ You're doing well if:
 
 ---
 
+## Claude Code Configuration
+
+**Commands** (`.claude/commands/`):
+| Command | Description |
+|---------|-------------|
+| `/status` | Start local dev server and check status |
+| `/build` | Build frontend and Docker image |
+
+**MCP Tools** (`.mcp.json`):
+- `time` - Date calculations
+- `calculator` - Math operations
+- `github` - PR/issue management
+- `gitea` - Gitea PR/issue management
+
+---
+
 **Last Updated**: January 3, 2026
 **Status**: Production Ready
 **Platform**: SRT-HQ Kubernetes
